@@ -1,5 +1,5 @@
 package moves;
-
+// ГОТОВ
 import ru.ifmo.se.pokemon.*;
 
 public class Wake_UpSlap extends PhysicalMove {
@@ -15,5 +15,10 @@ public class Wake_UpSlap extends PhysicalMove {
         } else {
             p.setMod(Stat.HP, (int) damage);
         }
+    }
+
+    @Override
+    protected String describe() {
+        return "Применил Wake-Up Slap";
     }
 }

@@ -1,5 +1,5 @@
 package moves;
-
+// ГОТОВ
 import ru.ifmo.se.pokemon.*;
 
 public class Flamethrower extends SpecialMove {
@@ -7,16 +7,15 @@ public class Flamethrower extends SpecialMove {
         super(Type.FIRE,90,100);
     }
 
-    private boolean track;
-
     @Override
-    protected void applyOppDamage(Pokemon p, double damage) {
-
+    protected void applyOppEffects(Pokemon p) {
+        if (Math.random() <= 0.1){
+            Effect.burn(p);
+        }
     }
 
     @Override
     protected String describe() {
-        if (track) return "Ударил с x2 силой";
-        else return "Ударил с обычной силой";
+        return "Применил FlameThrower";
     }
 }

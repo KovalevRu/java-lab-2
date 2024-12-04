@@ -1,5 +1,5 @@
 package moves;
-
+// ГОТОВ
 import ru.ifmo.se.pokemon.*;
 
 import java.util.Random;
@@ -10,12 +10,13 @@ public class StoneEdge extends PhysicalMove {
     }
 
     @Override
-    protected double calcCriticalHit(Pokemon pokemon, Pokemon pokemon1) {
-        return super.calcCriticalHit(pokemon, pokemon1);
+    protected double calcCriticalHit(Pokemon p, Pokemon p1) {
+
+        return (float)1/8 * super.calcCriticalHit(p, p1);
     }
 
-    public static boolean isCriticalHit() {
-        Random random = new Random();
-        return random.nextInt(8) == 0; // 1 из 8 шансов
+    @Override
+    protected String describe() {
+        return "Применил Stone Edge";
     }
 }
